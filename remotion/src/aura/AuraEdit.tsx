@@ -69,7 +69,13 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
     (plan.voices ?? []).some((v) => fr >= toFrame(v.t + (v.from ?? 0), fps) && fr < toFrame(v.t + v.to, fps));
   let near = 0;
   for (let k = -6; k <= 6; k++) if (talking(frame + k)) near = Math.max(near, 1 - Math.abs(k) / 7);
-  const songVol = (plan.songVolume ?? 1) * (1 - near * (1 - (plan.duck ?? 0.3)));
+  // مع songCurve: المستوى يتبع المنحنى فقط (لا ducking إلا إن حُدد duck صراحة)
+  const curve = plan.songCurve;
+  const curveVol = curve && curve.length > 1
+    ? interpolate(frame / fps, curve.map((c) => c[0]), curve.map((c) => c[1]), {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})
+    : 1;
+  const duck = curve && plan.duck === undefined ? 1 : (plan.duck ?? 0.3);
+  const songVol = (plan.songVolume ?? 1) * curveVol * (1 - near * (1 - duck));
   const fadeIn = plan.intro?.fadeIn ? interpolate(frame, [0, toFrame(plan.intro.fadeIn, fps)], [0, 1], {extrapolateRight: 'clamp'}) : 1;
 
   return (
