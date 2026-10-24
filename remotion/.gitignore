@@ -1,0 +1,7 @@
+node_modules/
+out/
+public/clips/
+public/masks/
+public/*.wav
+public/*.mp3
+public/sfx/

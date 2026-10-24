@@ -3,6 +3,8 @@
 > **الجواب المختصر: نعم، يمكن تنفيذ الأسلوب 100% بـ Remotion.** القطع الدقيق بالفريم، Velocity، Shake، Flash، Zoom، RGB split، Glow، Grain، Vignette، Letterbox، B&W⇐Color، النصوص المتحركة، النص خلف الشخص، SFX والـ ducking — كلها ممكنة.
 > **الاستراتيجية الصحيحة**: المعالجة الثقيلة (كشف الضربات، الاستيفاء، LUT، الفصل، القص العمودي) **مسبقاً** بـ Python/FFmpeg ([11](11-python-pipeline.md))، وRemotion **يركّب ويحرك** فقط ⇐ رندر سريع وثابت.
 
+> 📁 **الكود الحي في [`remotion/`](../remotion/)** — وأُضيف إليه بعد هذه الصفحة: خطوط محلية (`fonts.ts`)، خيارات النص (font/size/at/dur)، `letterbox` في الخطة، و`scripts/check-plan.ts`.
+
 > ✅ **مُختبر**: كل الكود أدناه نجح في `tsc --strict` ورُندر فعلياً على Remotion **4.0.538** (فيديو 6 ثوانٍ 1080×1920 بلقطات اختبار + `beats.json` من `tools/analyze_audio.py`): B&W + letterbox قبل الدروب ⇐ flash أبيض على فريم الدروب بالضبط ⇐ انفتاح الأشرطة + عودة اللون + عدّاد "+1000 AURA" + RGB split + نص slam.
 
 ## 0. الترخيص (مهم)

@@ -24,3 +24,14 @@
 | 13 | [13-recipes.md](aura-style/13-recipes.md) | وصفات إيديت جاهزة بالفريم والضربة |
 | 14 | [14-checklist.md](aura-style/14-checklist.md) | قائمة فحص الجودة والأخطاء الشائعة |
 | — | [SOURCES.md](aura-style/SOURCES.md) | المصادر |
+
+## المشروع البرمجي
+| المسار | المحتوى |
+|------|------|
+| [`remotion/`](remotion/) | مشروع Remotion الفعلي (`npm run render`، `npx tsx scripts/check-plan.ts`) — **المرجع المحدَّث للكود** (أحدث من الأمثلة في 10-remotion.md) |
+| [`tools/analyze_audio.py`](tools/analyze_audio.py) | كشف الضربات/الكيك/الدروب ⇐ beats.json |
+| [`tools/prepare_clip.py`](tools/prepare_clip.py) | قص لقطة إلى 9:16 حول الوجه + استيفاء + شحذ |
+| [`episodes/`](episodes/) | سجل كل حلقة: الأغنية، المشاهد، الخط الزمني، المراجعات |
+
+## الحلقات
+- [EP01 — Patrick Bateman × Ogryzek "AURA"](episodes/ep01-bateman-aura.md)

@@ -1,0 +1,105 @@
+{
+ "fps": 30,
+ "width": 1080,
+ "height": 1920,
+ "song": "song.wav",
+ "look": "villain",
+ "segments": [
+  {
+   "clip": "clips/c01_mask.mp4",
+   "start": 0.0,
+   "end": 1.9389,
+   "srcStart": 0.2,
+   "velocity": "none",
+   "speed": 0.75
+  },
+  {
+   "clip": "clips/c02_office.mp4",
+   "start": 1.9389,
+   "end": 3.9706,
+   "srcStart": 0.28,
+   "velocity": "none",
+   "speed": 0.5
+  },
+  {
+   "clip": "clips/c04_goggles.mp4",
+   "start": 3.9706,
+   "end": 6.6177,
+   "srcStart": 1.2,
+   "velocity": "hero",
+   "slow": 0.25,
+   "fast": 0.8,
+   "text": {
+    "value": "+{n} AURA",
+    "kind": "counter",
+    "at": 0.15,
+    "dur": 1.9,
+    "top": "64%",
+    "size": 140
+   }
+  },
+  {
+   "clip": "clips/c03_red.mp4",
+   "start": 6.6177,
+   "end": 7.9528,
+   "srcStart": 0.3,
+   "velocity": "none",
+   "speed": 0.9
+  },
+  {
+   "clip": "clips/c06_smirk.mp4",
+   "start": 7.9528,
+   "end": 8.6262,
+   "srcStart": 0.0,
+   "velocity": "none",
+   "speed": 1.0
+  },
+  {
+   "clip": "clips/c08_point.mp4",
+   "start": 8.6262,
+   "end": 9.288,
+   "srcStart": 0.17,
+   "velocity": "none",
+   "speed": 0.58
+  },
+  {
+   "clip": "clips/c07_axe.mp4",
+   "start": 9.288,
+   "end": 10.6115,
+   "srcStart": 0.2,
+   "velocity": "flash-in",
+   "fast": 3
+  },
+  {
+   "clip": "clips/c01_mask.mp4",
+   "start": 10.6115,
+   "end": 11.2733,
+   "srcStart": 2.6,
+   "velocity": "none",
+   "speed": 1.0
+  },
+  {
+   "clip": "clips/c02_office.mp4",
+   "start": 11.2733,
+   "end": 11.9583,
+   "srcStart": 1.2,
+   "velocity": "none",
+   "speed": 1.0
+  },
+  {
+   "clip": "clips/c09_smoke.mp4",
+   "start": 11.9583,
+   "end": 14.6,
+   "srcStart": 0.0,
+   "velocity": "none",
+   "speed": 0.58,
+   "text": {
+    "value": "PATRICK BATEMAN",
+    "kind": "slam",
+    "font": "cinzel",
+    "size": 88,
+    "top": "70%"
+   }
+  }
+ ]
+}
