@@ -24,6 +24,7 @@
 | 13 | [13-recipes.md](aura-style/13-recipes.md) | وصفات إيديت جاهزة بالفريم والضربة |
 | 14 | [14-checklist.md](aura-style/14-checklist.md) | قائمة فحص الجودة والأخطاء الشائعة |
 | 15 | [15-reference-channels.md](aura-style/15-reference-channels.md) | **دراسة القنوات المرجعية** (Jectro / Menzuration / StarEditz) — قالب "Story Aura Short" |
+| 16 | [16-clip-sources.md](aura-style/16-clip-sources.md) | **مصادر اللقطات 4K** (Apex Clips، Filmey Box، Amazing Shots…) + كتالوج John Wick |
 | — | [SOURCES.md](aura-style/SOURCES.md) | المصادر |
 
 ## المشروع البرمجي
