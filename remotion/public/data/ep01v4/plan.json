@@ -1,0 +1,23 @@
+{
+ "fps": 30, "width": 1080, "height": 1920,
+ "song": "song_v4.wav", "look": "villain", "letterbox": 0.08,
+ "intro": {"look": "muted", "fadeIn": 0.6},
+ "segments": [
+  {"clip": "clips/c10_room.mp4",    "start": 0,       "end": 2.647,   "srcStart": 0.0,  "speed": 0.9,  "move": "push-in", "moveAmount": 0.1,
+   "text": {"value": "MANHATTAN, 1987", "kind": "typewriter", "font": "montserrat", "size": 52, "spacing": "0.3em", "top": "20%", "at": 0.4, "dur": 2.1, "exit": "blur"}},
+  {"clip": "clips/c11_shower.mp4",  "start": 2.647,   "end": 5.294,   "srcStart": 1.0,  "speed": 0.6,  "move": "drift-up", "transition": "blackdip"},
+  {"clip": "clips/c01_mask.mp4",    "start": 5.294,   "end": 7.9412,  "srcStart": 0.2,  "speed": 0.75, "move": "push-in", "moveAmount": 0.15, "transition": "blackdip",
+   "text": {"value": "I'M SIMPLY NOT THERE.", "kind": "rise", "font": "cinzel", "size": 58, "spacing": "0.12em", "top": "72%", "at": 0.3, "dur": 2.25, "exit": "blur"}},
+  {"clip": "clips/c04_goggles.mp4", "start": 7.9412,  "end": 10.5883, "srcStart": 1.2,  "velocity": "hero", "slow": 0.25, "fast": 0.8, "transition": "flash",
+   "text": {"value": "+{n} AURA", "kind": "counter", "size": 150, "top": "63%", "at": 0.1, "dur": 2.5, "stroke": "#000", "glow": "rgba(80,140,255,.8)", "beat": true, "exit": "flash"}},
+  {"clip": "clips/c03_red.mp4",     "start": 10.5883, "end": 11.2617, "srcStart": 0.3,  "speed": 0.9, "transition": "whip"},
+  {"clip": "clips/c06_smirk.mp4",   "start": 11.2617, "end": 11.9234, "srcStart": 0.0,  "speed": 1.0, "transition": "glitch", "filter": "vivid"},
+  {"clip": "clips/c08_point.mp4",   "start": 11.9234, "end": 12.5968, "srcStart": 0.17, "speed": 0.58, "transition": "zoom"},
+  {"clip": "clips/c02_office.mp4",  "start": 12.5968, "end": 13.2586, "srcStart": 1.2,  "speed": 1.0, "transition": "whip", "filter": "bw"},
+  {"clip": "clips/c07_axe.mp4",     "start": 13.2586, "end": 14.5821, "srcStart": 0.2,  "velocity": "flash-in", "fast": 3, "transition": "shake"},
+  {"clip": "clips/c01_mask.mp4",    "start": 14.5821, "end": 15.2439, "srcStart": 2.6,  "speed": 1.0, "transition": "glitch", "filter": "red"},
+  {"clip": "clips/c03_red.mp4",     "start": 15.2439, "end": 15.9289, "srcStart": 0.0,  "speed": 0.9, "transition": "spin", "filter": "bw"},
+  {"clip": "clips/c09_smoke.mp4",   "start": 15.9289, "end": 18.6,    "srcStart": 0.0,  "speed": 0.58, "transition": "zoom",
+   "text": {"value": "PATRICK BATEMAN", "kind": "letters", "font": "cinzel", "size": 92, "spacing": "0.14em", "top": "70%", "at": 0.15, "stroke": "#000", "glow": "rgba(255,40,40,.6)", "beat": true}}
+ ]
+}
