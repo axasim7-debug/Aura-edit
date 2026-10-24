@@ -83,4 +83,8 @@ export type Plan = {
   caption?: string;        // شريط علوي ثابت (أسلوب Menzuration)
   duck?: number;           // مستوى الأغنية أثناء الحوار (افتراضي 0.3)
   songVolume?: number;     // مستوى الأغنية العام (افتراضي 1)
+  voices?: VoiceLine[];    // سطور حوار معزولة (Demucs) توضع بحرية — تخفض الأغنية تلقائياً
 };
+
+/** ملف صوت حوار مستقل: يبدأ عند t، والكلام الفعلي بين t+from و t+to (للخفض) */
+export type VoiceLine = { file: string; t: number; from?: number; to: number; volume?: number };

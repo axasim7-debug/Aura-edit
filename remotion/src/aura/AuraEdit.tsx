@@ -65,7 +65,8 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
   const videoFilter = `${dyn} ${flashFilter(frame, fps, beats.beats)}`.trim();
   // خفض الأغنية أثناء الحوار (ducking) مع انحدار 6 فريمات
   const talking = (fr: number) =>
-    plan.segments.some((sg) => sg.dialogue && fr >= toFrame(sg.start, fps) && fr < toFrame(sg.end, fps));
+    plan.segments.some((sg) => sg.dialogue && fr >= toFrame(sg.start, fps) && fr < toFrame(sg.end, fps)) ||
+    (plan.voices ?? []).some((v) => fr >= toFrame(v.t + (v.from ?? 0), fps) && fr < toFrame(v.t + v.to, fps));
   let near = 0;
   for (let k = -6; k <= 6; k++) if (talking(frame + k)) near = Math.max(near, 1 - Math.abs(k) / 7);
   const songVol = (plan.songVolume ?? 1) * (1 - near * (1 - (plan.duck ?? 0.3)));
@@ -144,6 +145,11 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
       <WhiteFlash beats={beats.beats} minLevel={4} />
 
       <Audio src={staticFile(plan.song)} volume={songVol} />
+      {plan.voices?.map((v, i) => (
+        <Sequence key={`v${i}`} from={Math.max(0, toFrame(v.t, fps))}>
+          <Audio src={staticFile(v.file)} volume={v.volume ?? 1} />
+        </Sequence>
+      ))}
       {plan.sfx?.map((s, i) => (
         <Sequence key={`s${i}`} from={Math.max(0, toFrame(s.t, fps))}>
           <Audio src={staticFile(s.file)} volume={s.volume ?? 0.5} />

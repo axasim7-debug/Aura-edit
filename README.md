@@ -40,3 +40,4 @@
 
 ## الحلقات
 - [EP01 — Patrick Bateman × Ogryzek "AURA"](episodes/ep01-bateman-aura.md)
+- [EP02 — John Wick × Raya (Story Aura Short)](episodes/ep02-johnwick-raya.md)
