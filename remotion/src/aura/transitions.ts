@@ -29,7 +29,7 @@ export const transitionFx = (
       case 'flash': return {...NONE, filter: `brightness(${1 + 2.5 * q})`};
       case 'blackdip': return {...NONE, filter: `brightness(${p})`};
       case 'zoom': return {...NONE, transform: `scale(${1 + 0.6 * q})`, filter: `blur(${14 * q}px)`};
-      case 'whip': return {...NONE, transform: `translateX(${70 * q}%)`, blurX: 60 * q};
+      case 'whip': return {...NONE, transform: `scale(${1 + 0.5 * q}) translateX(${(25 * q) / (1 + 0.5 * q)}%)`, blurX: 70 * q};
       case 'spin': return {...NONE, transform: `rotate(${-80 * q}deg) scale(${1 + 0.5 * q})`, filter: `blur(${10 * q}px)`};
       case 'shake': {
         const a = 60 * q;
@@ -44,7 +44,7 @@ export const transitionFx = (
       case 'flash': return {...NONE, filter: `brightness(${1 + 1.5 * p})`};
       case 'blackdip': return {...NONE, filter: `brightness(${1 - p})`};
       case 'zoom': return {...NONE, transform: `scale(${1 + 0.6 * p})`, filter: `blur(${14 * p}px)`};
-      case 'whip': return {...NONE, transform: `translateX(${-70 * p}%)`, blurX: 60 * p};
+      case 'whip': return {...NONE, transform: `scale(${1 + 0.5 * p}) translateX(${(-25 * p) / (1 + 0.5 * p)}%)`, blurX: 70 * p};
       case 'spin': return {...NONE, transform: `rotate(${80 * p}deg) scale(${1 + 0.5 * p})`, filter: `blur(${10 * p}px)`};
       case 'glitch': return glitch(f, seed + 'o', p);
       default: return NONE;
@@ -57,8 +57,8 @@ const glitch = (f: number, seed: string, k: number): FxStyle => {
   const r = (s: string) => random(`${seed}${s}${f}`) - 0.5;
   return {
     ...NONE,
-    transform: `translate(${r('x') * 120 * k}px, ${r('y') * 30 * k}px) skewX(${r('s') * 14 * k}deg) scale(${1 + 0.08 * k})`,
-    filter: `hue-rotate(${r('h') * 180 * k}deg) contrast(${1 + 0.6 * k}) saturate(${1 + k})`,
+    transform: `translate(${r('x') * 120 * k}px, ${r('y') * 30 * k}px) skewX(${r('s') * 14 * k}deg) scale(${1.12 + 0.08 * k})`,
+    filter: `hue-rotate(${r('h') * 30 * k}deg) contrast(${1 + 0.35 * k}) saturate(${1 + 0.25 * k})`,
   };
 };
 

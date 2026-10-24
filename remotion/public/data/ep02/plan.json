@@ -84,44 +84,101 @@
   {
    "clip": "clips/jw/j09_wickclose.mp4",
    "start": 20.5264,
-   "end": 22.0357,
+   "end": 21.153,
    "srcStart": 0.8,
    "speed": 0.6,
    "transition": "flash"
   },
   {
+   "clip": "clips/jw/f01_stomp.mp4",
+   "start": 21.153,
+   "end": 21.455,
+   "srcStart": 0.1,
+   "speed": 1.0,
+   "transition": "cut"
+  },
+  {
+   "clip": "clips/jw/f02_kick.mp4",
+   "start": 21.455,
+   "end": 22.071,
+   "srcStart": 0.07,
+   "speed": 1.0,
+   "transition": "whip"
+  },
+  {
+   "clip": "clips/jw/f03_rainshoot.mp4",
+   "start": 22.071,
+   "end": 22.535,
+   "srcStart": 0.5,
+   "speed": 1.0,
+   "transition": "cut",
+   "filter": "bw"
+  },
+  {
+   "clip": "clips/jw/f04_crowd.mp4",
+   "start": 22.535,
+   "end": 22.988,
+   "srcStart": 0.3,
+   "speed": 1.2,
+   "transition": "glitch"
+  },
+  {
+   "clip": "clips/jw/f06_dragon.mp4",
+   "start": 22.988,
+   "end": 23.301,
+   "srcStart": 0.05,
+   "speed": 1.0,
+   "transition": "flash"
+  },
+  {
    "clip": "clips/jw/j08_punch.mp4",
-   "start": 22.0357,
-   "end": 22.9761,
+   "start": 23.301,
+   "end": 23.603,
    "srcStart": 0.2,
    "speed": 1.3,
-   "transition": "whip",
+   "transition": "cut",
    "filter": "bleach"
   },
   {
-   "clip": "clips/jw/j05_fire.mp4",
-   "start": 22.9761,
-   "end": 23.5566,
+   "clip": "clips/jw/f09_explo.mp4",
+   "start": 23.603,
+   "end": 23.905,
+   "srcStart": 0.35,
+   "speed": 1.0,
+   "transition": "zoom"
+  },
+  {
+   "clip": "clips/jw/f07_candles.mp4",
+   "start": 23.905,
+   "end": 24.52,
+   "srcStart": 0.1,
+   "speed": 0.7,
+   "transition": "flash"
+  },
+  {
+   "clip": "clips/jw/f05_drift.mp4",
+   "start": 24.52,
+   "end": 24.985,
    "srcStart": 0.3,
    "speed": 1.4,
-   "transition": "zoom",
+   "transition": "whip",
    "filter": "vivid"
   },
   {
-   "clip": "clips/jw/j06_king.mp4",
-   "start": 23.5566,
-   "end": 24.4854,
-   "srcStart": 1.8,
-   "speed": 1,
+   "clip": "clips/jw/f08_glass.mp4",
+   "start": 24.985,
+   "end": 25.437,
+   "srcStart": 0.3,
+   "speed": 1.5,
    "transition": "glitch",
    "filter": "red"
   },
   {
-   "clip": "clips/jw/j07_wick.mp4",
-   "start": 24.4854,
-   "end": 25.55,
-   "srcStart": 3.6,
-   "speed": 0.5,
+   "clip": "clips/jw/f10_table.mp4",
+   "start": 25.437,
+   "end": 26.95,
+   "srcStart": 0.0,
+   "speed": 0.6,
    "transition": "flash",
    "text": {
     "value": "BABA YAGA",
@@ -130,7 +187,7 @@
     "size": 104,
     "spacing": "0.16em",
     "top": "66%",
-    "at": 0.1,
+    "at": 0.12,
     "glow": "rgba(255,40,40,.75)",
     "stroke": "#000",
     "beat": true
@@ -247,7 +304,7 @@
   },
   {
    "start": 19.98,
-   "end": 21.4,
+   "end": 21.12,
    "text": "Yeah.",
    "colors": {
     "YEAH": "#ff3b3b"
@@ -261,27 +318,23 @@
  "songCurve": [
   [
    0,
-   0.14
+   0.12
   ],
   [
    10,
-   0.17
+   0.16
   ],
   [
-   13.3,
+   14,
    0.2
   ],
   [
-   15.6,
-   0.17
-  ],
-  [
    17.2,
-   0.21
+   0.24
   ],
   [
    19.6,
-   0.5
+   0.55
   ],
   [
    19.92,
@@ -296,7 +349,7 @@
    1.0
   ],
   [
-   25.6,
+   26.95,
    1.0
   ]
  ]
