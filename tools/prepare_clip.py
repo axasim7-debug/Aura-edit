@@ -2,7 +2,7 @@
 
 Usage:
   python prepare_clip.py SRC OUT --start 12.3 --end 15.8 [--focus 0.5] [--zoom 1.0] [--fps 30]
-                         [--eq contrast=1.1:saturation=0.9] [--interp 60] [--sharpen 0.8]
+                         [--eq contrast=1.1:saturation=0.9] [--interp 60] [--sharpen 0.8] [--audio]
 
   --focus  horizontal center of the crop (0 = left edge, 1 = right edge) — put the face here
   --zoom   extra punch-in (>1 crops tighter around --focus / --focus-y)
@@ -33,6 +33,7 @@ def main():
     ap.add_argument("--fps", type=int, default=30)
     ap.add_argument("--interp", type=int, default=0)
     ap.add_argument("--eq", default="")
+    ap.add_argument("--audio", action="store_true", help="keep the clip's audio (dialogue) as AAC")
     ap.add_argument("--sharpen", type=float, default=0.0, help="unsharp amount after upscaling (0.5-1.0 for low-res sources)")
     a = ap.parse_args()
 
@@ -57,7 +58,7 @@ def main():
     vf.append(f"fps={a.fps}")
 
     cmd = ["ffmpeg", "-loglevel", "error", "-y", "-ss", str(a.start), "-to", str(a.end), "-i", a.src,
-           "-vf", ",".join(vf), "-an", "-c:v", "libx264", "-preset", "slow", "-crf", "14",
+           "-vf", ",".join(vf), *(["-c:a", "aac", "-b:a", "192k"] if a.audio else ["-an"]), "-c:v", "libx264", "-preset", "slow", "-crf", "14",
            "-g", "15", "-pix_fmt", "yuv420p", a.out]
     subprocess.check_call(cmd)
     print(f"{a.out}: crop {cw}x{ch}+{x}+{y} of {w}x{h}, {a.end - a.start:.2f}s")

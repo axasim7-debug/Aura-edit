@@ -11,6 +11,7 @@ import {Grain, Vignette, Letterbox} from './Overlays';
 import {AuraText} from './AuraText';
 import {LOOKS} from './looks';
 import {SEGMENT_FILTERS, TransitionType, moveTransform, transitionFx} from './transitions';
+import {CaptionBar, Subtitles, Watermark} from './Subtitles';
 
 const INTRO_LOOKS = {
   bw: 'grayscale(1) contrast(1.3) brightness(0.97)',
@@ -62,6 +63,12 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
 
   const dyn = preDrop ? introLook : look.filter;
   const videoFilter = `${dyn} ${flashFilter(frame, fps, beats.beats)}`.trim();
+  // خفض الأغنية أثناء الحوار (ducking) مع انحدار 6 فريمات
+  const talking = (fr: number) =>
+    plan.segments.some((sg) => sg.dialogue && fr >= toFrame(sg.start, fps) && fr < toFrame(sg.end, fps));
+  let near = 0;
+  for (let k = -6; k <= 6; k++) if (talking(frame + k)) near = Math.max(near, 1 - Math.abs(k) / 7);
+  const songVol = (plan.songVolume ?? 1) * (1 - near * (1 - (plan.duck ?? 0.3)));
   const fadeIn = plan.intro?.fadeIn ? interpolate(frame, [0, toFrame(plan.intro.fadeIn, fps)], [0, 1], {extrapolateRight: 'clamp'}) : 1;
 
   return (
@@ -88,6 +95,9 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
                   return (
                     <Sequence key={i} from={from} durationInFrames={len}>
                       <SegmentLayer seg={seg} index={i} len={len} inT={inT} outT={outT} clipProps={clipProps} />
+                      {seg.dialogue ? (
+                        <Audio src={staticFile(seg.clip)} trimBefore={toFrame(seg.srcStart, fps)} volume={seg.dialogue} />
+                      ) : null}
                       {seg.text?.behind && seg.mask && (
                         <>
                           <AuraText {...textProps(seg.text, beats.beats, from, len)} top={seg.text.top ?? '28%'} />
@@ -133,18 +143,18 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
 
       <WhiteFlash beats={beats.beats} minLevel={4} />
 
-      <Audio src={staticFile(plan.song)} />
+      <Audio src={staticFile(plan.song)} volume={songVol} />
       {plan.sfx?.map((s, i) => (
         <Sequence key={`s${i}`} from={Math.max(0, toFrame(s.t, fps))}>
           <Audio src={staticFile(s.file)} volume={s.volume ?? 0.5} />
         </Sequence>
       ))}
 
-      {plan.watermark && (
-        <div style={{position: 'absolute', top: 120, left: 60, color: 'white', opacity: 0.5, fontSize: 34}}>
-          {plan.watermark}
-        </div>
+      {plan.subtitles && (
+        <Subtitles lines={plan.subtitles} font={plan.subtitleStyle?.font} size={plan.subtitleStyle?.size} top={plan.subtitleStyle?.top} />
       )}
+      {plan.caption && <CaptionBar text={plan.caption} />}
+      {plan.watermark && <Watermark text={plan.watermark} />}
     </AbsoluteFill>
   );
 };

@@ -31,7 +31,10 @@
 |------|------|
 | [`remotion/`](remotion/) | مشروع Remotion الفعلي (`npm run render`، `npx tsx scripts/check-plan.ts`) — **المرجع المحدَّث للكود** (أحدث من الأمثلة في 10-remotion.md) |
 | [`tools/analyze_audio.py`](tools/analyze_audio.py) | كشف الضربات/الكيك/الدروب ⇐ beats.json |
-| [`tools/prepare_clip.py`](tools/prepare_clip.py) | قص لقطة إلى 9:16 حول الوجه + استيفاء + شحذ |
+| [`tools/prepare_clip.py`](tools/prepare_clip.py) | قص لقطة إلى 9:16 حول الوجه + استيفاء + شحذ (+ `--audio` لإبقاء الحوار) |
+| [`tools/scan_movie.py`](tools/scan_movie.py) | تفريغ فيلم كامل: الترجمة، المشاهد بأزمنتها، صور لكل مشهد |
+| [`tools/song_heatmap.py`](tools/song_heatmap.py) | قمة "Most replayed" لأي أغنية على يوتيوب |
+| [`tools/storyboard_extract.py`](tools/storyboard_extract.py) / [`storyboard_timeline.py`](tools/storyboard_timeline.py) | دراسة فيديوهات المراجع عبر صور يوتيوب المصغرة |
 | [`episodes/`](episodes/) | سجل كل حلقة: الأغنية، المشاهد، الخط الزمني، المراجعات |
 
 ## الحلقات

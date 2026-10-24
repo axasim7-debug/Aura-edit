@@ -122,11 +122,11 @@ Editing Software Used: After Effects 2020
 | فلاتر لكل لقطة | ✅ |
 | نصوص CapCut (letters/rise/typewriter/glitch/neon/wave/scatter + نبض الضربات) | ✅ |
 | intro هادئ (muted + fade in) | ✅ |
-| **صوت الحوار من الفيلم لكل لقطة + ducking** | ⏳ |
-| **مكون ترجمة كلمة-كلمة بألوان (من SRT)** | ⏳ |
-| **شريط عنوان علوي (caption box)** | ⏳ |
-| **علامة القناة + بطاقة نهاية** | ⏳ |
-| استخراج SRT من MKV + فحص المشاهد (scene detection) | ⏳ |
+| صوت الحوار من الفيلم لكل لقطة + خفض الأغنية تلقائياً (`dialogue`، `duck`) | ✅ |
+| ترجمة كلمة-كلمة بكلمات ملونة متوهجة (`subtitles`) | ✅ |
+| شريط عنوان علوي (`caption`) | ✅ |
+| علامة القناة بأسلوب Jectro (`watermark`) — بطاقة النهاية عبر `texts` | ✅ |
+| تفريغ الفيلم: الترجمة + تقسيم المشاهد + صور لكل مشهد (`tools/scan_movie.py`) | ✅ |
 
 ## 7. Raya (slowed) — Zericxxn: خريطة الأغنية
 - المدة 110s، ~97–99 BPM (ضربة ≈ 0.61s).

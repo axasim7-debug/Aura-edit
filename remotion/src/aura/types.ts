@@ -15,7 +15,7 @@ export type SegmentText = {
   kind: 'slam' | 'pop' | 'counter' | 'flicker' | 'type'
     | 'letters' | 'rise' | 'typewriter' | 'glitch' | 'neon' | 'wave' | 'scatter';
   behind?: boolean;        // خلف الشخص (يتطلب mask)
-  font?: 'bebas' | 'anton' | 'cinzel' | 'montserrat';
+  font?: 'bebas' | 'anton' | 'cinzel' | 'montserrat' | 'montserratXB' | 'poppinsXB';
   size?: number;
   color?: string;
   top?: string;            // "40%"
@@ -48,6 +48,19 @@ export type Segment = {
   moveAmount?: number;     // افتراضي 0.12
   filter?: 'none' | 'bw' | 'muted' | 'cold' | 'warm' | 'red' | 'invert' | 'bleach' | 'vivid' | 'dark';
   focusY?: number;         // إزاحة عمودية للإطار (−0.2..0.2) إن احتاج الوجه
+  dialogue?: number;       // تشغيل صوت اللقطة (الحوار) بهذا المستوى 0..1 — يتطلب سرعة 1 ولقطة بصوت
+};
+
+/** سطر ترجمة (الأزمنة على التايملاين بالثواني) */
+export type SubtitleLine = {
+  start: number;
+  end: number;
+  text: string;
+  colors?: Record<string, string>;  // كلمات ملونة: {"MARK": "#ff3b3b"} (بالحروف الكبيرة بلا علامات)
+  color?: string;                   // لون آخر كلمة (اختصار)
+  words?: number[];                 // بداية كل كلمة (ثوانٍ من بداية السطر) — من Whisper إن توفرت
+  size?: number;
+  top?: string;
 };
 
 export type Plan = {
@@ -65,4 +78,9 @@ export type Plan = {
     fadeIn?: number;                   // ظهور من الأسود (ثواني)
   };
   texts?: TimedText[];
+  subtitles?: SubtitleLine[];
+  subtitleStyle?: { font?: 'montserratXB' | 'poppinsXB' | 'bebas' | 'anton'; size?: number; top?: string };
+  caption?: string;        // شريط علوي ثابت (أسلوب Menzuration)
+  duck?: number;           // مستوى الأغنية أثناء الحوار (افتراضي 0.3)
+  songVolume?: number;     // مستوى الأغنية العام (افتراضي 1)
 };

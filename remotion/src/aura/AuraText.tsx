@@ -89,7 +89,7 @@ export const AuraText: React.FC<AuraTextProps> = ({
   ].filter(Boolean).join(', ');
 
   const base: React.CSSProperties = {
-    fontFamily: `'${FONTS[font].family}'`, fontWeight: FONTS[font].weight, fontSize: size, color,
+    fontFamily: `'${FONTS[font].family}'`, fontWeight: FONTS[font].weight, fontStyle: FONTS[font].style, fontSize: size, color,
     letterSpacing: spacing, whiteSpace: 'nowrap', textShadow: shadow, display: 'inline-block',
     WebkitTextStroke: stroke ? `2px ${stroke}` : undefined,
   };
