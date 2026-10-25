@@ -89,4 +89,5 @@ export const SEGMENT_FILTERS: Record<string, string> = {
   bleach: 'saturate(0.35) contrast(1.5) brightness(1.05)',
   vivid: 'saturate(1.45) contrast(1.2)',
   dark: 'brightness(0.7) contrast(1.35)',
+  lift: 'brightness(1.4) contrast(1.05) saturate(1.1)',
 };

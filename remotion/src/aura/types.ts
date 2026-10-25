@@ -46,7 +46,7 @@ export type Segment = {
   transition?: 'cut' | 'flash' | 'zoom' | 'whip' | 'spin' | 'glitch' | 'shake' | 'blackdip'; // الدخول إلى هذا المقطع
   move?: 'none' | 'push-in' | 'pull-out' | 'pan-left' | 'pan-right' | 'drift-up';         // حركة كاميرا هادئة
   moveAmount?: number;     // افتراضي 0.12
-  filter?: 'none' | 'bw' | 'muted' | 'cold' | 'warm' | 'red' | 'invert' | 'bleach' | 'vivid' | 'dark';
+  filter?: 'none' | 'bw' | 'muted' | 'cold' | 'warm' | 'red' | 'invert' | 'bleach' | 'vivid' | 'dark' | 'lift';
   focusY?: number;         // إزاحة عمودية للإطار (−0.2..0.2) إن احتاج الوجه
   dialogue?: number;       // تشغيل صوت اللقطة (الحوار) بهذا المستوى 0..1 — يتطلب سرعة 1 ولقطة بصوت
 };
