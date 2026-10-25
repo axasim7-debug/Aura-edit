@@ -12,6 +12,14 @@ import argparse
 import json
 import subprocess
 
+# Unified looks so clips from different sources (HDR film, ProRes trailer, web 4K) match.
+GRADES = {
+    # cinematic teal shadows / warm highlights, gentle S-curve
+    "teal": "colorbalance=rs=-0.04:bs=0.06:rm=0.02:bm=-0.02:rh=0.05:gh=0.01:bh=-0.05,"
+            "curves=all='0/0 0.15/0.11 0.5/0.5 0.85/0.9 1/1',eq=saturation=1.08",
+    "neutral": "curves=all='0/0 0.15/0.12 0.5/0.5 0.85/0.88 1/1'",
+}
+
 
 def probe(src):
     out = subprocess.check_output([
@@ -33,6 +41,8 @@ def main():
     ap.add_argument("--fps", type=int, default=30)
     ap.add_argument("--interp", type=int, default=0)
     ap.add_argument("--eq", default="")
+    ap.add_argument("--grade", choices=sorted(GRADES), help="apply a shared look (use the same one for every clip of an edit)")
+    ap.add_argument("--raw", action="store_true", help="crop only (no scaling) — for a separate AI upscale step")
     ap.add_argument("--hdr", action="store_true", help="source is HDR10 (PQ/BT.2020): tone-map to SDR BT.709")
     ap.add_argument("--audio", action="store_true", help="keep the clip's audio (dialogue) as AAC")
     ap.add_argument("--sharpen", type=float, default=0.0, help="unsharp amount after upscaling (0.5-1.0 for low-res sources)")
@@ -52,7 +62,10 @@ def main():
         # mobius keeps skin tones natural and lifts dark films better than hable
         vf.append("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=mobius:param=0.3:desat=0,"
                   "zscale=t=bt709:m=bt709:r=tv,format=yuv420p")
-    vf.append("scale=1080:1920:flags=lanczos,setsar=1")
+    if a.grade:
+        vf.append(GRADES[a.grade])
+    if not a.raw:
+        vf.append("scale=1080:1920:flags=lanczos,setsar=1")
     if a.interp:
         vf.append(f"minterpolate=fps={a.interp}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1")
     if a.sharpen:

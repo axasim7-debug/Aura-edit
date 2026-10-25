@@ -1,0 +1,411 @@
+{
+ "fps": 24,
+ "width": 1080,
+ "height": 1920,
+ "song": "song_raya.wav",
+ "look": "none",
+ "letterbox": 0,
+ "intro": {
+  "look": "none",
+  "fadeIn": 0.8
+ },
+ "segments": [
+  {
+   "clip": "clips/jw4/j01_skyline.mp4",
+   "start": 0,
+   "end": 3.62,
+   "srcStart": 0.4,
+   "speed": 0.9,
+   "move": "push-in",
+   "moveAmount": 0.08,
+   "text": {
+    "value": "NEW YORK CITY",
+    "kind": "typewriter",
+    "font": "montserrat",
+    "size": 44,
+    "spacing": "0.35em",
+    "top": "16%",
+    "at": 0.2,
+    "dur": 3.2,
+    "exit": "blur"
+   }
+  },
+  {
+   "clip": "clips/jw4/j02_tunnel.mp4",
+   "start": 3.62,
+   "end": 7.24,
+   "srcStart": 0.05,
+   "speed": 0.85,
+   "move": "push-in",
+   "moveAmount": 0.06,
+   "transition": "blackdip"
+  },
+  {
+   "clip": "clips/jw4/j03_post.mp4",
+   "start": 7.24,
+   "end": 8.95,
+   "srcStart": 0.1,
+   "speed": 1
+  },
+  {
+   "clip": "clips/jw4/j04_hall.mp4",
+   "start": 8.95,
+   "end": 11.77,
+   "srcStart": 0.5,
+   "speed": 1,
+   "move": "push-in",
+   "moveAmount": 0.1,
+   "transition": "blackdip"
+  },
+  {
+   "clip": "clips/jw4/j05_fire.mp4",
+   "start": 11.77,
+   "end": 13.6,
+   "srcStart": 0.0,
+   "speed": 0.7
+  },
+  {
+   "clip": "clips/jw4/j06_king.mp4",
+   "start": 13.6,
+   "end": 16.5,
+   "srcStart": 0.3,
+   "speed": 1,
+   "transition": "blackdip"
+  },
+  {
+   "clip": "clips/jw4/j07_wick.mp4",
+   "start": 16.5,
+   "end": 19.621,
+   "srcStart": 0.14,
+   "speed": 1,
+   "move": "push-in",
+   "moveAmount": 0.06
+  },
+  {
+   "clip": "clips/jw4/o_club.mp4",
+   "start": 19.621,
+   "end": 20.085,
+   "srcStart": 0,
+   "speed": 1,
+   "transition": "flash",
+   "filter": "lift"
+  },
+  {
+   "clip": "clips/jw4/o_neon.mp4",
+   "start": 20.085,
+   "end": 20.538,
+   "srcStart": 0.12,
+   "speed": 1,
+   "transition": "cut"
+  },
+  {
+   "clip": "clips/jw4/o_flykick.mp4",
+   "start": 20.538,
+   "end": 21.153,
+   "srcStart": 0,
+   "speed": 0.95,
+   "transition": "whip"
+  },
+  {
+   "clip": "clips/jw4/f01_stomp.mp4",
+   "start": 21.153,
+   "end": 21.455,
+   "srcStart": 0.1,
+   "speed": 1,
+   "transition": "cut"
+  },
+  {
+   "clip": "clips/jw4/o_stairs.mp4",
+   "start": 21.455,
+   "end": 22.071,
+   "srcStart": 0,
+   "speed": 0.9,
+   "transition": "zoom"
+  },
+  {
+   "clip": "clips/jw4/f03_rainshoot.mp4",
+   "start": 22.071,
+   "end": 22.535,
+   "srcStart": 0.5,
+   "speed": 1,
+   "transition": "cut",
+   "filter": "bw"
+  },
+  {
+   "clip": "clips/jw4/f04_crowd.mp4",
+   "start": 22.535,
+   "end": 22.988,
+   "srcStart": 0.3,
+   "speed": 1.2,
+   "transition": "glitch"
+  },
+  {
+   "clip": "clips/jw4/f06_dragon.mp4",
+   "start": 22.988,
+   "end": 23.301,
+   "srcStart": 0.05,
+   "speed": 1,
+   "transition": "flash"
+  },
+  {
+   "clip": "clips/jw4/f09_explo.mp4",
+   "start": 23.301,
+   "end": 23.603,
+   "srcStart": 0.35,
+   "speed": 1,
+   "transition": "cut"
+  },
+  {
+   "clip": "clips/jw4/f02_kick.mp4",
+   "start": 23.603,
+   "end": 23.905,
+   "srcStart": 0.07,
+   "speed": 1,
+   "transition": "zoom"
+  },
+  {
+   "clip": "clips/jw4/t_rainface.mp4",
+   "start": 23.905,
+   "end": 24.52,
+   "srcStart": 0.0,
+   "speed": 0.7,
+   "transition": "flash"
+  },
+  {
+   "clip": "clips/jw4/f05_drift.mp4",
+   "start": 24.52,
+   "end": 24.985,
+   "srcStart": 0.3,
+   "speed": 1.4,
+   "transition": "whip",
+   "filter": "vivid"
+  },
+  {
+   "clip": "clips/jw4/o_rainfight.mp4",
+   "start": 24.985,
+   "end": 25.437,
+   "srcStart": 0,
+   "speed": 0.9,
+   "transition": "glitch",
+   "filter": "red"
+  },
+  {
+   "clip": "clips/jw4/f10_table.mp4",
+   "start": 25.437,
+   "end": 26.95,
+   "srcStart": 0,
+   "speed": 0.6,
+   "transition": "flash",
+   "text": {
+    "value": "BABA YAGA",
+    "kind": "letters",
+    "font": "cinzel",
+    "size": 104,
+    "spacing": "0.16em",
+    "top": "66%",
+    "at": 0.12,
+    "glow": "rgba(255,40,40,.75)",
+    "stroke": "#000",
+    "beat": true
+   }
+  }
+ ],
+ "voices": [
+  {
+   "file": "voice/jw/l1.wav",
+   "t": 0.5,
+   "from": 0.39,
+   "to": 2.93
+  },
+  {
+   "file": "voice/jw/l2.wav",
+   "t": 3.9,
+   "from": 0.2,
+   "to": 4.18
+  },
+  {
+   "file": "voice/jw/l3.wav",
+   "t": 9.1,
+   "from": 0.22,
+   "to": 3.28
+  },
+  {
+   "file": "voice/jw/l4.wav",
+   "t": 13.7,
+   "from": 0.9,
+   "to": 2.43
+  },
+  {
+   "file": "voice/jw/l5.wav",
+   "t": 17.86,
+   "from": 1.2,
+   "to": 1.75
+  }
+ ],
+ "subtitles": [
+  {
+   "start": 0.85,
+   "end": 3.55,
+   "text": "I am the way into the city of woe.",
+   "colors": {
+    "WOE": "#ff3b3b"
+   },
+   "words": [
+    0,
+    0.27,
+    0.43,
+    0.55,
+    0.83,
+    1.59,
+    1.77,
+    1.97,
+    2.25
+   ]
+  },
+  {
+   "start": 4.1,
+   "end": 5.6,
+   "text": "Abandon all hope,",
+   "colors": {
+    "HOPE": "#ffb020"
+   },
+   "words": [
+    0,
+    0.75,
+    0.95
+   ]
+  },
+  {
+   "start": 5.75,
+   "end": 8.2,
+   "text": "you who are about to enter here.",
+   "colors": {
+    "HERE": "#ff3b3b"
+   },
+   "words": [
+    0,
+    0.14,
+    0.4,
+    0.6,
+    0.86,
+    1.1,
+    1.32
+   ]
+  },
+  {
+   "start": 9.3,
+   "end": 12.4,
+   "text": "As do I.",
+   "colors": {
+    "I": "#ffb020"
+   },
+   "words": [
+    0,
+    0.8,
+    1.6
+   ]
+  },
+  {
+   "start": 14.6,
+   "end": 16.4,
+   "text": "You ready, John?",
+   "colors": {
+    "JOHN": "#3b8bff"
+   },
+   "words": [
+    0,
+    0.6,
+    1.22
+   ]
+  },
+  {
+   "start": 19.08,
+   "end": 19.95,
+   "text": "Yeah.",
+   "colors": {
+    "YEAH": "#ff3b3b"
+   },
+   "size": 72
+  }
+ ],
+ "subtitleStyle": {
+  "size": 56
+ },
+ "songCurve": [
+  [
+   0,
+   0.12
+  ],
+  [
+   9,
+   0.16
+  ],
+  [
+   13,
+   0.2
+  ],
+  [
+   16.4,
+   0.24
+  ],
+  [
+   18.9,
+   0.5
+  ],
+  [
+   19.1,
+   0.18
+  ],
+  [
+   19.58,
+   0.18
+  ],
+  [
+   19.62,
+   1.0
+  ],
+  [
+   26.95,
+   1.0
+  ]
+ ],
+ "fx": {
+  "grain": 0.035,
+  "shake": 20,
+  "dropZoom": 0.14,
+  "beatZoom": 0.06,
+  "rgbBase": 0
+ },
+ "sfx": [
+  {
+   "file": "sfx/impact.wav",
+   "t": 19.621,
+   "volume": 0.55
+  },
+  {
+   "file": "sfx/impact.wav",
+   "t": 25.437,
+   "volume": 0.35
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "t": 20.218,
+   "volume": 0.22
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "t": 21.135,
+   "volume": 0.22
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "t": 23.283,
+   "volume": 0.22
+  },
+  {
+   "file": "sfx/whoosh.wav",
+   "t": 24.2,
+   "volume": 0.22
+  }
+ ]
+}

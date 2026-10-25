@@ -81,9 +81,9 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
   return (
     <AbsoluteFill style={{background: 'black'}}>
       <AbsoluteFill style={{opacity: fadeIn}}>
-        <Shake beats={beats.beats}>
-          <ZoomPunch beats={beats.beats} creepUntil={dropF}>
-            <RgbSplit beats={beats.beats} id="rgb">
+        <Shake beats={beats.beats} amp={plan.fx?.shake ?? 34}>
+          <ZoomPunch beats={beats.beats} creepUntil={dropF} dropPeak={plan.fx?.dropZoom} beatPeak={plan.fx?.beatZoom}>
+            <RgbSplit beats={beats.beats} id="rgb" base={plan.fx?.rgbBase ?? 2}>
               <AbsoluteFill style={{filter: videoFilter || undefined}}>
                 {plan.segments.map((seg, i) => {
                   const from = toFrame(seg.start, fps);
@@ -124,7 +124,7 @@ export const AuraEdit: React.FC<{plan: Plan; beats: BeatsFile}> = ({plan, beats}
 
         {(plan.letterbox ?? 0.1) > 0 && <Letterbox openAt={dropF} bar={plan.letterbox ?? 0.1} />}
         <Vignette strength={preDrop ? 0.65 : 0.5} />
-        <Grain opacity={0.09} />
+        <Grain opacity={plan.fx?.grain ?? 0.09} />
       </AbsoluteFill>
 
       {/* النصوص: فوق كل شيء (لا تهتز مع الصورة إلا إن طُلب beat) */}
