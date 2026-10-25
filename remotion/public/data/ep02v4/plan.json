@@ -169,7 +169,7 @@
    "end": 24.52,
    "srcStart": 0.0,
    "speed": 0.7,
-   "transition": "flash"
+   "transition": "cut"
   },
   {
    "clip": "clips/jw4/f05_drift.mp4",
@@ -187,7 +187,7 @@
    "srcStart": 0,
    "speed": 0.9,
    "transition": "glitch",
-   "filter": "red"
+   "filter": "lift"
   },
   {
    "clip": "clips/jw4/f10_table.mp4",
